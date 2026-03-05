@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Overview
+For a complete overview of the full-stack architecture, local database setup (Docker), and backend integration, see the [main project documentation](../GEMINI.md).
+
+## Configuration
+Ensure the `.env.local` file is configured to point to your backend:
+```env
+NEXT_PUBLIC_ENV_URL="http://localhost:5119"
+```
+
 ## Getting Started
 
 First, run the development server:
