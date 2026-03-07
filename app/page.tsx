@@ -67,6 +67,10 @@ export default function Home() {
             </audio>
           </CardContent>
         </Card> ) : "No songs found" }
+        <footer className="mt-auto pt-8 text-right text-xs text-zinc-500 dark:text-zinc-400">
+          <p>Songs from <a href="https://www.playonloop.com" target="_blank" rel="noopener noreferrer" className="hover:underline">PlayOnLoop.com</a></p>
+          <p>Licensed under Creative Commons by Attribution 4.0</p>
+        </footer>
       </main>
     </div>
   );
