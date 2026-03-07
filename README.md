@@ -1,45 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Music Streaming Service - Frontend
 
-## Overview
-For a complete overview of the full-stack architecture, local database setup (Docker), and backend integration, see the [main project documentation](../GEMINI.md).
+A modern, high-performance music streaming interface built with **Next.js 16** and **React 19**. This application serves as the primary "Driving Adapter" for the backend's hexagonal core.
 
-## Configuration
-Ensure the `.env.local` file is configured to point to your backend:
+## 🚀 Tech Stack
+
+### Core Frameworks
+- **Framework:** Next.js 16 (App Router) — Leverages the latest server-side rendering (SSR) and client-side navigation features.
+- **UI Library:** React 19 — Utilizes modern hooks and concurrent rendering capabilities.
+- **Language:** TypeScript — Ensures type safety across all components and API interactions.
+
+### Styling & UI
+- **Styling:** **Tailwind CSS v4** — A utility-first CSS framework for rapid UI development with enhanced performance.
+- **Components:** Radix UI — Accessible, unstyled primitives for building high-quality design systems.
+- **Icons:** Lucide React — A clean and consistent icon library.
+- **Animation:** `tw-animate-css` for smooth transitions and interactive feedback.
+
+### Architecture (The "Driving Adapter")
+In our **Hexagonal Architecture**, this frontend is a "Primary" or "Driving" Adapter. It:
+1.  **Translates User Actions:** Converts clicks and interactions into structured API calls.
+2.  **Orchestrates State:** Manages the playback, liking, and discovery flows on the client side.
+3.  **Interfaces with the Core:** Communicates with the .NET 8 backend via standardized JSON contracts.
+
+---
+
+## 🛠️ Local Development
+
+### 1. Prerequisites
+- **Node.js** (LTS recommended)
+- **npm** or **yarn**
+
+### 2. Configuration
+Create a `.env.local` file in the root of this directory:
 ```env
 NEXT_PUBLIC_ENV_URL="http://localhost:5119"
 ```
 
-## Getting Started
-
-First, run the development server:
-
+### 3. Getting Started
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ☁️ Production Infrastructure (Azure)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This frontend is optimized for **Azure Static Web Apps (SWA)**, which provides:
+- **Global CDN:** Assets are served from the edge for maximum speed.
+- **Managed SSR:** Automatic support for Next.js Server-Side Rendering.
+- **CI/CD:** Automated builds and deployments via GitHub Actions.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For detailed deployment steps, see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md).
