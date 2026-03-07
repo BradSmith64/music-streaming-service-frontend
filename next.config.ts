@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Azure Static Web Apps handles Next.js builds natively */
 };
 
 export default nextConfig;
