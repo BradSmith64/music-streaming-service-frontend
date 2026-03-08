@@ -57,7 +57,7 @@ export default function Home() {
         { songs && songs.length > 0 ? songs.map( ( song ) => <Card key={ song.id } className="w-full">
           <CardHeader>
             <CardTitle>{ song.title }</CardTitle>
-            <CardDescription>{ song.albumTitle }</CardDescription>
+            <CardDescription>{ song.artistName } • { song.albumTitle }</CardDescription>
             <CardAction className="flex gap-2 items-center">{ song.likeCount } Likes { song.liked ? <ThumbsUp className="cursor-pointer" onClick={ () => unlikeSong(song.id) } fill="black" strokeWidth={0} /> : <ThumbsUp className="cursor-pointer" onClick={ () => likeSong(song.id) } /> }</CardAction>
           </CardHeader>
           <CardContent className="flex justify-end">
